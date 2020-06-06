@@ -1,13 +1,21 @@
 <template>
     <div>
+
+        <div class="border-b-8 border-gray-800 p-4">
+            <app-tweet-compose />
+        </div>
+
         <app-tweet v-for="t in tweets" :key="t.id" :tweet="t" />
+
         <div v-if="tweets.length" v-observe-visibility="handleScrolledToBottom"></div>
+
     </div>
 </template>
 
 <script>
     import AppTweet from "../tweets/AppTweet";
     import {mapGetters, mapActions} from 'vuex';
+    import AppTweetCompose from "../compose/AppTweetCompose";
 
     export default {
         name: "AppTimeline",
@@ -19,7 +27,7 @@
             }
         },
 
-        components: {AppTweet},
+        components: {AppTweetCompose, AppTweet},
 
         computed: {
             ...mapGetters({
