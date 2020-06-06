@@ -1,12 +1,13 @@
 <template>
-    <form class="flex">
+    <form @submit.prevent="tweet()" class="flex">
         <div class="mr-3">
             <img :src="$user.avatar" class="w-12 rounded-full" />
         </div>
         <div class="flex-grow">
-            <textarea class="bg-gray-900 outline-none text-gray-300 text-lg resize-none mb-2"
+            <textarea class="bg-gray-900 w-full outline-none text-gray-300 text-lg resize-none mb-2"
                       placeholder="what's happening?"
                       autofocus
+                      v-model="form.body"
             ></textarea>
             <div class="flex justify-between">
                 <div>Actions</div>
@@ -20,7 +21,22 @@
 
 <script>
     export default {
-        name: "AppTweetCompose"
+        name: "AppTweetCompose",
+
+        data: () => {
+            return {
+                form: {
+                    body: ""
+                }
+            }
+        },
+
+        methods: {
+            async tweet() {
+                await axios.post('/api/tweets', this.form);
+                this.form.body = '';
+            }
+        }
     }
 </script>
 
