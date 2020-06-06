@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        $user = $request->user();
+        $tweetsFromFollowing = $user->tweetsFromFollowing;
+        $following =  $user->following;
+
+        dd($user->name, $following, $tweetsFromFollowing);
+
         return view('home');
     }
 }
