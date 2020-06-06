@@ -1,19 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    
-                    <example-component />
-
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="flex">
+    <div class="w-3/12">nav</div>
+    <div class="w-7/12 border border-t-0 border-b-0 border-gray-800">timeline</div>
 </div>
 @endsection
