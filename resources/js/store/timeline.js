@@ -10,7 +10,9 @@ export default {
     },
 
     mutations: {
-        PUSH_TWEETS: (state, payload) => state.tweets = [...state.tweets, ...payload]
+        PUSH_TWEETS: (state, payload) => state.tweets = [...state.tweets, ...payload.filter(item => {
+            return ! state.tweets.map(t => t.id).includes(item.id);
+        })]
     },
 
     actions: {

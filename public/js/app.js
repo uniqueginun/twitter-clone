@@ -63028,7 +63028,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   },
   mutations: {
     PUSH_TWEETS: function PUSH_TWEETS(state, payload) {
-      return state.tweets = [].concat(_toConsumableArray(state.tweets), _toConsumableArray(payload));
+      return state.tweets = [].concat(_toConsumableArray(state.tweets), _toConsumableArray(payload.filter(function (item) {
+        return !state.tweets.map(function (t) {
+          return t.id;
+        }).includes(item.id);
+      })));
     }
   },
   actions: {
