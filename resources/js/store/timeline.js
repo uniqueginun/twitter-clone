@@ -6,7 +6,7 @@ export default {
     },
 
     getters: {
-        tweets: state => state.tweets
+        tweets: state => state.tweets.sort((a, b) => b.created_at - a.created_at)
     },
 
     mutations: {

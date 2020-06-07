@@ -14,7 +14,7 @@
 
 <script>
     import AppTweet from "../tweets/AppTweet";
-    import {mapGetters, mapActions} from 'vuex';
+    import {mapGetters, mapActions, mapMutations} from 'vuex';
     import AppTweetCompose from "../compose/AppTweetCompose";
 
     export default {
@@ -36,12 +36,20 @@
 
             uriWithPage() {
                 return `/api/timeline?page=${this.page}`;
+            },
+
+            channelName() {
+                return `timeline.${this.$user.id}`;
             }
         },
 
         methods: {
             ...mapActions({
                 getTweets: 'timeline/getTweets'
+            }),
+
+            ...mapMutations({
+                PUSH_TWEETS: 'timeline/PUSH_TWEETS'
             }),
 
             loadTweets() {
@@ -57,7 +65,13 @@
         },
 
         mounted() {
+
             this.loadTweets();
+
+            Echo.private(this.channelName)
+                .listen('.TweetWasCreated', (e) => {
+                    this.PUSH_TWEETS([e]);
+                });
         }
     }
 </script>

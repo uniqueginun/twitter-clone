@@ -2038,10 +2038,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   })), {}, {
     uriWithPage: function uriWithPage() {
       return "/api/timeline?page=".concat(this.page);
+    },
+    channelName: function channelName() {
+      return "timeline.".concat(this.$user.id);
     }
   }),
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
     getTweets: 'timeline/getTweets'
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
+    PUSH_TWEETS: 'timeline/PUSH_TWEETS'
   })), {}, {
     loadTweets: function loadTweets() {
       var _this = this;
@@ -2057,7 +2062,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   mounted: function mounted() {
+    var _this2 = this;
+
     this.loadTweets();
+    Echo["private"](this.channelName).listen('.TweetWasCreated', function (e) {
+      _this2.PUSH_TWEETS([e]);
+    });
   }
 });
 
@@ -63011,7 +63021,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   },
   getters: {
     tweets: function tweets(state) {
-      return state.tweets;
+      return state.tweets.sort(function (a, b) {
+        return b.created_at - a.created_at;
+      });
     }
   },
   mutations: {
