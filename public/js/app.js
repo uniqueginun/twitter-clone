@@ -2185,7 +2185,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "AppTweetActionsGroup"
+  name: "AppTweetActionsGroup",
+  props: {
+    tweet: {
+      required: true,
+      type: Object
+    }
+  }
 });
 
 /***/ }),
@@ -2209,7 +2215,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "AppTweetLikeAction"
+  name: "AppTweetLikeAction",
+  props: {
+    tweet: {
+      required: true,
+      type: Object
+    }
+  }
 });
 
 /***/ }),
@@ -49252,7 +49264,12 @@ var render = function() {
     _vm._v(" "),
     _c("li", { staticClass: "w-3/12" }, [_c("app-tweet-retweet-action")], 1),
     _vm._v(" "),
-    _c("li", { staticClass: "w-3/12" }, [_c("app-tweet-like-action")], 1)
+    _c(
+      "li",
+      { staticClass: "w-3/12" },
+      [_c("app-tweet-like-action", { attrs: { tweet: _vm.tweet } })],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -49298,7 +49315,9 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("span", { staticClass: "text-gray-600" }, [_vm._v("0")])
+      _c("span", { staticClass: "text-gray-600" }, [
+        _vm._v(_vm._s(_vm.tweet.likes_count))
+      ])
     ]
   )
 }
@@ -49439,7 +49458,7 @@ var render = function() {
           attrs: { tweet: _vm.tweet.original_tweet }
         }),
         _vm._v(" "),
-        _c("app-tweet-actions-group")
+        _c("app-tweet-actions-group", { attrs: { tweet: _vm.tweet } })
       ],
       1
     )
@@ -49545,7 +49564,7 @@ var render = function() {
           _vm._v(_vm._s(_vm.tweet.body))
         ]),
         _vm._v(" "),
-        _c("app-tweet-actions-group")
+        _c("app-tweet-actions-group", { attrs: { tweet: _vm.tweet } })
       ],
       1
     )

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=PT+Sans&display=swap');
+
 @tailwind base;
 
 @tailwind components;
@@ -5,9 +7,14 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-900;
+  @apply bg-gray-900 pb-6;
+  font-family: 'PT Sans', sans-serif !important;
 }
 
 a {
   @apply text-blue-500;
+}
+
+p {
+  font-family: 'Acme', sans-serif !important;
 }
