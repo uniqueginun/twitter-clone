@@ -63313,6 +63313,9 @@ var app = new Vue({
   el: '#app',
   store: store
 });
+Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
+  store.commit('timeline/UPDATE_LIKES', e);
+});
 
 /***/ }),
 
@@ -64332,10 +64335,21 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           return t.id;
         }).includes(item.id);
       })));
+    },
+    UPDATE_LIKES: function UPDATE_LIKES(state, _ref) {
+      var id = _ref.id,
+          count = _ref.count;
+      return state.tweets = state.tweets.map(function (t) {
+        if (t.id === id) {
+          t.likes_count = count;
+        }
+
+        return t;
+      });
     }
   },
   actions: {
-    getTweets: function getTweets(_ref, uri) {
+    getTweets: function getTweets(_ref2, uri) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var commit, _yield$axios$get, data;
 
@@ -64343,7 +64357,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                commit = _ref.commit;
+                commit = _ref2.commit;
                 _context.next = 3;
                 return axios.get(uri);
 

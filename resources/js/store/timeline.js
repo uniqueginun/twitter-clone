@@ -12,7 +12,14 @@ export default {
     mutations: {
         PUSH_TWEETS: (state, payload) => state.tweets = [...state.tweets, ...payload.filter(item => {
             return ! state.tweets.map(t => t.id).includes(item.id);
-        })]
+        })],
+
+        UPDATE_LIKES: (state, {id, count}) => state.tweets = state.tweets.map(t => {
+            if (t.id === id) {
+                t.likes_count = count;
+            }
+            return t;
+        })
     },
 
     actions: {
