@@ -63314,9 +63314,6 @@ var app = new Vue({
   store: store
 });
 Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
-  console.log(e.user_id);
-  console.log(window.User.id);
-
   if (e.user_id === window.User.id) {
     store.dispatch('likes/syncLike', e.id);
   }
@@ -64368,6 +64365,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       return state.tweets = state.tweets.map(function (t) {
         if (t.id === id) {
           t.likes_count = count;
+        }
+
+        if (t.original_tweet && t.original_tweet.id === id) {
+          t.original_tweet.likes_count = count;
         }
 
         return t;
