@@ -68,4 +68,9 @@ class User extends Authenticatable
             'following_id'
         );
     }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }
