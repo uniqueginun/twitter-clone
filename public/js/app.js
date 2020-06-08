@@ -63314,6 +63314,13 @@ var app = new Vue({
   store: store
 });
 Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
+  console.log(e.user_id);
+  console.log(window.User.id);
+
+  if (e.user_id === window.User.id) {
+    store.dispatch('likes/syncLike', e.id);
+  }
+
   store.commit('timeline/UPDATE_LIKES', e);
 });
 
@@ -64245,6 +64252,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       var _state$likes;
 
       return (_state$likes = state.likes).push.apply(_state$likes, _toConsumableArray(payload));
+    },
+    PUSH_LIKE: function PUSH_LIKE(state, id) {
+      return state.likes.push(id);
+    },
+    POP_LIKE: function POP_LIKE(state, id) {
+      return state.likes = state.likes.filter(function (like) {
+        return parseInt(like) !== parseInt(id);
+      });
     }
   },
   actions: {
@@ -64281,6 +64296,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           }
         }, _callee2);
       }))();
+    },
+    syncLike: function syncLike(_ref, id) {
+      var commit = _ref.commit,
+          state = _ref.state;
+
+      if (state.likes.includes(id)) {
+        commit('POP_LIKE', id);
+        return;
+      }
+
+      commit('PUSH_LIKE', id);
     }
   }
 });

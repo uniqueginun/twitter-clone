@@ -32,5 +32,10 @@ const app = new Vue({
 
 Echo.channel('tweets')
     .listen('.TweetLikesWereUpdated', (e) => {
+        console.log(e.user_id);
+        console.log(window.User.id);
+        if (e.user_id === window.User.id) {
+            store.dispatch('likes/syncLike', e.id);
+        }
         store.commit('timeline/UPDATE_LIKES', e);
     });
