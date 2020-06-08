@@ -8,4 +8,7 @@ Route::group(['namespace' => 'Api'], function () {
 
     Route::post('tweets', 'Tweet\TweetController@store');
 
+    Route::post('tweets/{tweet}/likes', 'Tweet\LikeTweetController@store');
+    Route::delete('tweets/{tweet}/likes', 'Tweet\LikeTweetController@destroy');
+
 });

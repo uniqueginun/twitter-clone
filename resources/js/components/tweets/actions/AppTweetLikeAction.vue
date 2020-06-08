@@ -1,5 +1,5 @@
 <template>
-    <a href="#" class="flex items-center text-base">
+    <a href="#" @click.prevent="toggleLikeStatus" class="flex items-center text-base">
         <svg
                 viewBox="0 0 24 24"
                 class="fill-current text-gray-600 w-5 mr-2"
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import {mapGetters} from 'vuex'
+    import { mapGetters, mapActions } from 'vuex'
 
     export default {
         name: "AppTweetLikeAction",
@@ -29,6 +29,21 @@
             tweet: {
                 required: true,
                 type: Object
+            }
+        },
+        methods: {
+            ...mapActions({
+                unlikeTweet: 'likes/unlikeTweet',
+                likeTweet: 'likes/likeTweet',
+            }),
+
+            toggleLikeStatus() {
+                if (this.liked) {
+                    this.unlikeTweet(this.tweet);
+                    return;
+                }
+
+                this.likeTweet(this.tweet);
             }
         },
         computed: {
