@@ -9,7 +9,11 @@
             />
             <div class="flex justify-between">
                 <div>Actions</div>
-                <div>
+                <div class="flex items-center justify-end">
+                    <app-tweet-compose-limit-indicator
+                        :charactersAmount="charactersAmount"
+                        v-show="charactersAmount"
+                    />
                     <button type="submit" class="bg-blue-600 rounded-full text-gray-300 text-center px-4 py-3 font-bold leading-none">Tweet</button>
                 </div>
             </div>
@@ -32,6 +36,12 @@
             async tweet() {
                 await axios.post('/api/tweets', this.form);
                 this.form.body = '';
+            }
+        },
+
+        computed: {
+            charactersAmount() {
+                return parseInt(this.form.body.length);
             }
         }
     }
