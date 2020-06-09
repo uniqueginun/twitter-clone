@@ -50,4 +50,7 @@ Echo.channel('tweets')
 
         store.commit('timeline/UPDATE_RETWEETS', e);
 
+    })
+    .listen('.TweetWasDeleted', (e) => {
+        store.commit('timeline/POP_TWEET', e.id, { root: true });
     });

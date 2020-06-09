@@ -14,6 +14,8 @@ export default {
             return ! state.tweets.map(t => t.id).includes(item.id);
         })],
 
+        POP_TWEET: (state, id) => state.tweets = state.tweets.filter(t => t.id !== id),
+
         UPDATE_LIKES: (state, {id, count}) => state.tweets = state.tweets.map(t => {
             if (t.id === id) {
                 t.likes_count = count;
