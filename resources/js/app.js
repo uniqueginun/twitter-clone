@@ -41,4 +41,13 @@ Echo.channel('tweets')
 
         store.commit('timeline/UPDATE_LIKES', e);
 
+    })
+    .listen('.TweetRetweetsUpdated', (e) => {
+
+        if (e.user_id === window.User.id) {
+            store.dispatch('retweets/syncRetweet', e.id);
+        }
+
+        store.commit('timeline/UPDATE_RETWEETS', e);
+
     });

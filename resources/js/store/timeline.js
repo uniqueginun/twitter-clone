@@ -22,7 +22,17 @@ export default {
                 t.original_tweet.likes_count = count;
             }
             return t;
-        })
+        }),
+
+        UPDATE_RETWEETS: (state, {id, count}) => state.tweets = state.tweets.map(t => {
+            if (t.id === id) {
+                t.retweets_count = count;
+            }
+            if (t.original_tweet && t.original_tweet.id === id) {
+                t.original_tweet.retweets_count = count;
+            }
+            return t;
+        }),
     },
 
     actions: {

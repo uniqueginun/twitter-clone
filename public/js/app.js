@@ -63774,6 +63774,12 @@ Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
   }
 
   store.commit('timeline/UPDATE_LIKES', e);
+}).listen('.TweetRetweetsUpdated', function (e) {
+  if (e.user_id === window.User.id) {
+    store.dispatch('retweets/syncRetweet', e.id);
+  }
+
+  store.commit('timeline/UPDATE_RETWEETS', e);
 });
 
 /***/ }),
@@ -65016,6 +65022,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       var _state$retweets;
 
       return (_state$retweets = state.retweets).push.apply(_state$retweets, _toConsumableArray(payload));
+    },
+    PUSH_RETWEET: function PUSH_RETWEET(state, id) {
+      return state.retweets.push(id);
+    },
+    POP_RETWEET: function POP_RETWEET(state, id) {
+      return state.retweets = state.retweets.filter(function (r) {
+        return parseInt(r) !== parseInt(id);
+      });
     }
   },
   actions: {
@@ -65052,6 +65066,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           }
         }, _callee2);
       }))();
+    },
+    syncRetweet: function syncRetweet(_ref, id) {
+      var commit = _ref.commit,
+          state = _ref.state;
+
+      if (state.retweets.includes(id)) {
+        commit('POP_RETWEET', id);
+        return;
+      }
+
+      commit('PUSH_RETWEET', id);
     }
   }
 });
@@ -65121,10 +65146,25 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         return t;
       });
+    },
+    UPDATE_RETWEETS: function UPDATE_RETWEETS(state, _ref2) {
+      var id = _ref2.id,
+          count = _ref2.count;
+      return state.tweets = state.tweets.map(function (t) {
+        if (t.id === id) {
+          t.retweets_count = count;
+        }
+
+        if (t.original_tweet && t.original_tweet.id === id) {
+          t.original_tweet.retweets_count = count;
+        }
+
+        return t;
+      });
     }
   },
   actions: {
-    getTweets: function getTweets(_ref2, uri) {
+    getTweets: function getTweets(_ref3, uri) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var commit, _yield$axios$get, data;
 
@@ -65132,7 +65172,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                commit = _ref2.commit;
+                commit = _ref3.commit;
                 _context.next = 3;
                 return axios.get(uri);
 
