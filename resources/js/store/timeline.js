@@ -29,7 +29,8 @@ export default {
         async getTweets({commit}, uri) {
             const {data} = await axios.get(uri);
             commit('PUSH_TWEETS', data.data);
-            commit('likes/PUSH_LIKES', data.meta.likes, { root: true })
+            commit('likes/PUSH_LIKES', data.meta.likes, { root: true });
+            commit('retweets/PUSH_RETWEETS', data.meta.retweets, { root: true });
             return data;
         }
     }
