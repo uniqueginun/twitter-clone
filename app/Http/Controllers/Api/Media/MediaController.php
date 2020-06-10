@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Media;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Media\MediaStoreRequest;
+use App\Http\Resources\Media\TweetMediaCollection;
 use App\TweetMedia;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,8 @@ class MediaController extends Controller
         $result = collect($request['media'])->map(function ($mediaElement) {
            return $this->addMedia($mediaElement);
         });
+
+        return new TweetMediaCollection($result);
     }
 
     protected function addMedia($mediaElement)
@@ -33,5 +36,7 @@ class MediaController extends Controller
                     ->toMediaCollection()
             )
             ->save();
+
+        return $tweetMedia;
     }
 }
