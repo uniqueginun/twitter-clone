@@ -42,7 +42,9 @@
                 media: {
                     images: [],
                     video: null
-                }
+                },
+
+                mediaTypes: {}
             }
         },
 
@@ -53,7 +55,23 @@
             },
 
             handleMediaSelected(files) {
-                console.log(files)
+                Array.from(files).slice(0, 4).forEach(file => {
+                    if(this.mediaTypes.images.includes(file.type)) {
+                        this.media.images.push(file)
+                    }
+                    if (this.mediaTypes.video.includes(file.type)) {
+                        this.media.video = file
+                    }
+                })
+
+                if (this.media.video) {
+                    this.media.images = []
+                }
+            },
+
+            async loadMediaTypes() {
+                const { data } = await axios.get('/api/media/types');
+                this.mediaTypes = data.data;
             }
         },
 
@@ -61,6 +79,10 @@
             charactersAmount() {
                 return parseInt(this.form.body.length);
             }
+        },
+
+        mounted() {
+            this.loadMediaTypes();
         }
     }
 </script>

@@ -1969,7 +1969,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       media: {
         images: [],
         video: null
-      }
+      },
+      mediaTypes: {}
     };
   },
   methods: {
@@ -1996,13 +1997,56 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     handleMediaSelected: function handleMediaSelected(files) {
-      console.log(files);
+      var _this2 = this;
+
+      Array.from(files).slice(0, 4).forEach(function (file) {
+        if (_this2.mediaTypes.images.includes(file.type)) {
+          _this2.media.images.push(file);
+        }
+
+        if (_this2.mediaTypes.video.includes(file.type)) {
+          _this2.media.video = file;
+        }
+      });
+
+      if (this.media.video) {
+        this.media.images = [];
+      }
+    },
+    loadMediaTypes: function loadMediaTypes() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var _yield$axios$get, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.get('/api/media/types');
+
+              case 2:
+                _yield$axios$get = _context2.sent;
+                data = _yield$axios$get.data;
+                _this3.mediaTypes = data.data;
+
+              case 5:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   },
   computed: {
     charactersAmount: function charactersAmount() {
       return parseInt(this.form.body.length);
     }
+  },
+  mounted: function mounted() {
+    this.loadMediaTypes();
   }
 });
 
