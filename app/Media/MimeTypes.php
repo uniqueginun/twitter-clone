@@ -2,6 +2,8 @@
 
 namespace App\Media;
 
+use phpDocumentor\Reflection\Types\Static_;
+
 class MimeTypes
 {
     public static $images = [
@@ -14,4 +16,9 @@ class MimeTypes
     public static $video = [
         'video/mp4'
     ];
+
+    public static function all()
+    {
+        return array_merge(Static::$images, static::$video);
+    }
 }

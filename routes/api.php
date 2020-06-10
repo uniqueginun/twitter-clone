@@ -16,4 +16,6 @@ Route::group(['namespace' => 'Api'], function () {
 
     Route::get('media/types', 'Media\MediaTypesController@index');
 
+    Route::post('media', 'Media\MediaController@store');
+
 });
