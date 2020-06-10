@@ -1,11 +1,9 @@
 <template>
     <div class="flex w-full">
-        <div class="mr-3">
-            <img :src="tweet.user.avatar" class="w-12 rounded-full" />
-        </div>
+        <img :src="$user.avatar" class="mr-3 w-12 h-12 rounded-full" />
         <div class="flex-grow">
             <app-tweet-username :user="tweet.user" />
-            <p class="text-gray-300 whitespace-pre-wrap">{{ tweet.body }}</p>
+            <p class="text-gray-300 whitespace-pre-wrap break-all">{{ tweet.body }}</p>
             <app-tweet-actions-group :tweet="tweet" />
         </div>
     </div>

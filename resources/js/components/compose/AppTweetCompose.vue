@@ -1,12 +1,15 @@
 <template>
     <form @submit.prevent="tweet()" class="flex">
-        <div class="mr-3">
-            <img :src="$user.avatar" class="w-12 rounded-full" />
-        </div>
+        <img :src="$user.avatar" class="mr-3 w-12 h-12 rounded-full" />
         <div class="flex-grow">
             <app-tweet-compose-textarea
                 v-model="form.body"
             />
+
+            <app-tweet-image-preview v-if="media.images.length" :images="media.images" />
+
+            <app-tweet-video-preview v-if="media.video" :video="media.video" />
+
             <div class="flex justify-between">
                 <ul class="flex items-center">
                     <li class="mr-4">
