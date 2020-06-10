@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50f1a4cf-036b-43bb-a722-911358d21f68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetImagePreview.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetVideoPreview.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetImagePreview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetImagePreview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetVideoPreview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetVideoPreview.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,74 +22,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="71" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/timeline/AppTimeline.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="37" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="37" />
-              <folding>
-                <element signature="e#316#358#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweet.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweetUsername.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="71" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantRetweet.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="20" selection-start-line="4" selection-end-line="5" />
+            <state relative-caret-position="440">
+              <caret line="88" column="84" selection-start-line="88" selection-start-column="84" selection-end-line="88" selection-end-column="84" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/compose/media/AppTweetImagePreview.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            <state relative-caret-position="60">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -100,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/compose/media/AppTweetVideoPreview.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="58" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="58" />
+            <state relative-caret-position="100">
+              <caret line="5" column="42" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -177,11 +117,11 @@
         <option value="$PROJECT_DIR$/app/Media/MimeTypes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Media/MediaTypesController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetImagePreview.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetVideoPreview.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetVideoPreview.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetImagePreview.vue" />
       </list>
     </option>
   </component>
@@ -440,12 +380,12 @@
       <option name="presentableId" value="Default" />
       <updated>1591414492553</updated>
       <workItem from="1591414496588" duration="53049000" />
-      <workItem from="1591776416978" duration="5254000" />
+      <workItem from="1591776416978" duration="6191000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58303000" />
+    <option name="totallyTimeSpent" value="59240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -791,31 +731,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/compose/media/AppTweetCompoeMediaButton.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/compose/media/AppTweetImagePreview.vue">
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/compose/media/AppTweetVideoPreview.vue">
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantRetweet.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="58" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="58" />
+        <state relative-caret-position="80">
+          <caret line="4" column="20" selection-start-line="4" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue">
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="71" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweetUsername.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweet.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -829,38 +776,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweet.vue">
+    <entry file="file://$PROJECT_DIR$/resources/js/components/compose/media/AppTweetCompoeMediaButton.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="140">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweetUsername.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="71" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantRetweet.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="20" selection-start-line="4" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue">
+    <entry file="file://$PROJECT_DIR$/resources/js/components/compose/media/AppTweetVideoPreview.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="88" column="84" selection-start-line="88" selection-start-column="84" selection-end-line="88" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/compose/media/AppTweetImagePreview.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>

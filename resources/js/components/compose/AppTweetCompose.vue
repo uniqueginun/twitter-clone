@@ -6,9 +6,17 @@
                 v-model="form.body"
             />
 
-            <app-tweet-image-preview v-if="media.images.length" :images="media.images" />
+            <app-tweet-image-preview
+                v-if="media.images.length"
+                :images="media.images"
+                @removed="removeImage"
+            />
 
-            <app-tweet-video-preview v-if="media.video" :video="media.video" />
+            <app-tweet-video-preview
+                v-if="media.video"
+                :video="media.video"
+                @removed="media.video = null"
+            />
 
             <div class="flex justify-between">
                 <ul class="flex items-center">
@@ -75,6 +83,10 @@
             async loadMediaTypes() {
                 const { data } = await axios.get('/api/media/types');
                 this.mediaTypes = data.data;
+            },
+
+            removeImage(img) {
+                this.media.images = this.media.images.filter(image => image !== img)
             }
         },
 

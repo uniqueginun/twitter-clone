@@ -1961,6 +1961,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppTweetCompose",
   data: function data() {
@@ -2041,6 +2049,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee2);
       }))();
+    },
+    removeImage: function removeImage(img) {
+      this.media.images = this.media.images.filter(function (image) {
+        return image !== img;
+      });
     }
   },
   computed: {
@@ -2229,6 +2242,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppTweetImagePreview",
   props: {
@@ -2255,6 +2279,15 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -49596,13 +49629,19 @@ var render = function() {
           _vm._v(" "),
           _vm.media.images.length
             ? _c("app-tweet-image-preview", {
-                attrs: { images: _vm.media.images }
+                attrs: { images: _vm.media.images },
+                on: { removed: _vm.removeImage }
               })
             : _vm._e(),
           _vm._v(" "),
           _vm.media.video
             ? _c("app-tweet-video-preview", {
-                attrs: { video: _vm.media.video }
+                attrs: { video: _vm.media.video },
+                on: {
+                  removed: function($event) {
+                    _vm.media.video = null
+                  }
+                }
               })
             : _vm._e(),
           _vm._v(" "),
@@ -49838,8 +49877,47 @@ var render = function() {
     _vm._l(_vm.images, function(image, index) {
       return _c(
         "div",
-        { key: index, staticClass: "flex-grow relative w-6/12" },
-        [_c("img", { attrs: { src: _vm.generateImagePreview(image) } })]
+        { key: index, staticClass: "w-6/12 flex-grow relative" },
+        [
+          _c("img", { attrs: { src: _vm.generateImagePreview(image) } }),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "bg-gray-900 w-8 h-8 rounded-full absolute top-0 right-0 mt-3 mr-3 flex items-center justify-center",
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.$emit("removed", image)
+                }
+              }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "fill-current text-gray-300",
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 24 24",
+                    width: "24",
+                    height: "24"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"
+                    }
+                  })
+                ]
+              )
+            ]
+          )
+        ]
       )
     }),
     0
@@ -49867,7 +49945,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mb-4" }, [
+  return _c("div", { staticClass: "mb-4 relative" }, [
     _c("video", {
       staticClass: "rounded-lg",
       attrs: {
@@ -49875,7 +49953,44 @@ var render = function() {
         preload: "",
         src: _vm.generateVideoPreview(_vm.video)
       }
-    })
+    }),
+    _vm._v(" "),
+    _c(
+      "a",
+      {
+        staticClass:
+          "bg-gray-900 w-8 h-8 rounded-full absolute top-0 right-0 mt-3 mr-3 flex items-center justify-center",
+        attrs: { href: "#" },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.$emit("removed")
+          }
+        }
+      },
+      [
+        _c(
+          "svg",
+          {
+            staticClass: "fill-current text-gray-300",
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 24 24",
+              width: "24",
+              height: "24"
+            }
+          },
+          [
+            _c("path", {
+              attrs: {
+                d:
+                  "M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"
+              }
+            })
+          ]
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = []
