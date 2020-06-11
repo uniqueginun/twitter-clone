@@ -16,7 +16,7 @@ Vue.use(VModal, {
     dynamicDefaults: {
         height: 'auto',
         pivotY: 0.1,
-        classes: '!bg-gray-400 rounded-lg p-4',
+        classes: '!bg-gray-900 shadow-lg rounded-lg p-4',
     }
 })
 

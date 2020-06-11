@@ -2493,6 +2493,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppTweetRetweetModal",
   props: {
@@ -50981,7 +50987,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    " + _vm._s(_vm.tweet.body) + "\n")])
+  return _c(
+    "div",
+    [
+      _c("app-tweet-compose"),
+      _vm._v(" "),
+      _vm.tweet
+        ? _c("app-tweet-variant-" + _vm.tweet.type, {
+            tag: "component",
+            staticClass: "border border-gray-700 rounded-lg mt-4 p-4",
+            attrs: { tweet: _vm.tweet }
+          })
+        : _vm._e()
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -65265,7 +65285,7 @@ Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_2___default.a, {
   dynamicDefaults: {
     height: 'auto',
     pivotY: 0.1,
-    classes: '!bg-gray-400 rounded-lg p-4'
+    classes: '!bg-gray-900 shadow-lg rounded-lg p-4'
   }
 });
 Vue.prototype.$user = User;
