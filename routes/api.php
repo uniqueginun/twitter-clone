@@ -22,4 +22,6 @@ Route::group(['namespace' => 'Api'], function () {
 
     Route::post('media', 'Media\MediaController@store');
 
+    Route::get('/notifications', 'Notifications\NotificationController@index');
+
 });
