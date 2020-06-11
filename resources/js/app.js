@@ -9,6 +9,9 @@ Vue.use(Vuex);
 import VueObserveVisibility from 'vue-observe-visibility'
 Vue.use(VueObserveVisibility)
 
+import ProgressBar from 'vuejs-progress-bar'
+Vue.use(ProgressBar)
+
 Vue.prototype.$user = User;
 
 const files = require.context('./', true, /\.vue$/i)

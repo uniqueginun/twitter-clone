@@ -2,9 +2,12 @@
     <form @submit.prevent="tweet()" class="flex">
         <img :src="$user.avatar" class="mr-3 w-12 h-12 rounded-full" />
         <div class="flex-grow">
+
             <app-tweet-compose-textarea
                 v-model="form.body"
             />
+
+            <AppTweetMediaProgress class="mb-4" :progress="media.progress" v-if="media.progress" />
 
             <app-tweet-image-preview
                 v-if="media.images.length"
@@ -52,7 +55,8 @@
 
                 media: {
                     images: [],
-                    video: null
+                    video: null,
+                    progress: 0
                 },
 
                 mediaTypes: {}
@@ -62,9 +66,10 @@
         methods: {
             async tweet() {
 
-                let uploadedMediaIds = await this.uploadMedia();
-
-                this.form.media = uploadedMediaIds.data.data.map(media => media.id);
+                if (this.media.images.length || this.media.video) {
+                    let uploadedMediaIds = await this.uploadMedia();
+                    this.form.media = uploadedMediaIds.data.data.map(media => media.id);
+                }
 
                 await axios.post('/api/tweets', this.form);
 
@@ -77,14 +82,21 @@
                 this.form.media = []
                 this.media.images = []
                 this.media.video = null
+                this.media.progress = 0
             },
 
             async uploadMedia() {
                 return await axios.post('/api/media', this.buildMediaForm(), {
                     headers: {
                         'Content-Type': 'multipart/form-data'
-                    }
+                    },
+
+                    onUploadProgress: this.handleUploadProgress
                 })
+            },
+
+            handleUploadProgress({ loaded, total }) {
+                this.media.progress = parseInt(Math.round((loaded / total) * 100));
             },
 
             buildMediaForm() {
@@ -142,5 +154,8 @@
 </script>
 
 <style scoped>
-
+    #progress-bar-line, #line-progress {
+        width: 100%;
+        height: 5px;
+    }
 </style>
