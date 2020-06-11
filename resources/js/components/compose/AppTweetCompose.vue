@@ -61,8 +61,46 @@
 
         methods: {
             async tweet() {
+
+                let uploadedMediaIds = await this.uploadMedia();
+
+                this.form.media = uploadedMediaIds.data.data.map(media => media.id);
+
                 await axios.post('/api/tweets', this.form);
-                this.form.body = '';
+
+                this.emptyFormData();
+            },
+
+            emptyFormData() {
+                this.form.body = ''
+                this.form.media = []
+                this.media.images = []
+                this.media.video = null
+            },
+
+            async uploadMedia() {
+                return await axios.post('/api/media', this.buildMediaForm(), {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+            },
+
+            buildMediaForm() {
+
+                let form = new FormData();
+
+                if (this.media.images.length) {
+                    this.media.images.forEach((img, index) => {
+                        form.append(`media[${index}]`, img);
+                    });
+                }
+
+                if (this.media.video) {
+                    form.append('media[0]', this.media.video);
+                }
+
+                return form;
             },
 
             handleMediaSelected(files) {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Tweet;
 use App\Events\Tweets\TweetWasCreated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Tweets\TweetStoreRequest;
+use App\TweetMedia;
 use App\Tweets\TweetTypes;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,10 @@ class TweetController extends Controller
         ]);
 
         $tweet = $request->user()->tweets()->create($tweet_arr);
+
+        collect($request->media)->each(function ($id) use ($tweet) {
+           $tweet->media()->save(TweetMedia::find($id));
+        });
 
         broadcast(new TweetWasCreated($tweet));
     }
