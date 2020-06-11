@@ -10,14 +10,14 @@ class NotificationController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware(['auth:sanctum']);
+        $this->middleware(['auth:sanctum']);
     }
 
     public function index(Request $request)
     {
         $notifications = $request->user()
                              ->notifications()
-                             ->paginate(5);
+                             ->paginate(1);
 
         return new NotificationCollection($notifications);
     }
