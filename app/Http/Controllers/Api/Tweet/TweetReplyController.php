@@ -28,7 +28,7 @@ class TweetReplyController extends Controller
         collect($request->media)->each(function ($id) use ($reply) {
             $reply->media()->save(TweetMedia::find($id));
         });
-        
-        broadcast(new TweetRepliesUpdated($request->user(), $tweet));
+
+        broadcast(new TweetRepliesUpdated($tweet));
     }
 }
