@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Api\Tweet;
 
-use App\Events\Tweets\TweetRetweetsUpdated;
+use App\Events\Tweets\TweetRepliesUpdated;
 use App\Events\Tweets\TweetWasCreated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Tweets\TweetStoreRequest;
 use App\Tweet;
 use App\TweetMedia;
 use App\Tweets\TweetTypes;
-use Illuminate\Http\Request;
 
 class TweetReplyController extends Controller
 {
@@ -29,9 +28,7 @@ class TweetReplyController extends Controller
         collect($request->media)->each(function ($id) use ($reply) {
             $reply->media()->save(TweetMedia::find($id));
         });
-
-        //broadcast(new TweetWasCreated($reply));
-
-        //broadcast(new TweetRetweetsUpdated($request->user(), $tweet));
+        
+        broadcast(new TweetRepliesUpdated($request->user(), $tweet));
     }
 }

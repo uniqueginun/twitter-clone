@@ -65089,6 +65089,8 @@ Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
   store.commit('timeline/POP_TWEET', e.id, {
     root: true
   });
+}).listen('.TweetRepliesUpdated', function (e) {
+  store.commit('timeline/UPDATE_REPLIES', e);
 });
 
 /***/ }),
@@ -67301,10 +67303,25 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         return t;
       });
+    },
+    UPDATE_REPLIES: function UPDATE_REPLIES(state, _ref3) {
+      var id = _ref3.id,
+          count = _ref3.count;
+      state.tweets = state.tweets.map(function (tweet) {
+        if (tweet.id === id) {
+          tweet.replies_count = count;
+        }
+
+        if (tweet.original_tweet && tweet.original_tweet.id === id) {
+          tweet.original_tweet.replies_count = count;
+        }
+
+        return tweet;
+      });
     }
   },
   actions: {
-    getTweets: function getTweets(_ref3, uri) {
+    getTweets: function getTweets(_ref4, uri) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var commit, _yield$axios$get, data;
 
@@ -67312,7 +67329,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                commit = _ref3.commit;
+                commit = _ref4.commit;
                 _context.next = 3;
                 return axios.get(uri);
 
@@ -67336,7 +67353,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }, _callee);
       }))();
     },
-    quoteTweet: function quoteTweet(_ref4, _ref5) {
+    quoteTweet: function quoteTweet(_ref5, _ref6) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
         var _, id, body;
 
@@ -67344,8 +67361,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _ = _ref4._;
-                id = _ref5.id, body = _ref5.body;
+                _ = _ref5._;
+                id = _ref6.id, body = _ref6.body;
                 _context2.next = 4;
                 return axios.post("/api/tweets/".concat(id, "/quotes"), {
                   body: body
@@ -67359,7 +67376,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }, _callee2);
       }))();
     },
-    replyTweet: function replyTweet(_ref6, _ref7) {
+    replyTweet: function replyTweet(_ref7, _ref8) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
         var _, id, form;
 
@@ -67367,8 +67384,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _ = _ref6._;
-                id = _ref7.id, form = _ref7.form;
+                _ = _ref7._;
+                id = _ref8.id, form = _ref8.form;
                 _context3.next = 4;
                 return axios.post("/api/tweets/".concat(id, "/replies"), form);
 

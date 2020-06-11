@@ -64,4 +64,7 @@ Echo.channel('tweets')
     })
     .listen('.TweetWasDeleted', (e) => {
         store.commit('timeline/POP_TWEET', e.id, { root: true });
-    });
+    })
+    .listen('.TweetRepliesUpdated', (e) => {
+        store.commit('timeline/UPDATE_REPLIES', e);
+    })

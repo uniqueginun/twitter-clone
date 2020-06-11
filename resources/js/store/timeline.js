@@ -35,6 +35,18 @@ export default {
             }
             return t;
         }),
+
+        UPDATE_REPLIES: (state, {id, count}) => {
+            state.tweets = state.tweets.map(tweet => {
+                if (tweet.id === id) {
+                    tweet.replies_count = count;
+                }
+                if (tweet.original_tweet && tweet.original_tweet.id === id) {
+                    tweet.original_tweet.replies_count = count;
+                }
+                return tweet;
+            })
+        }
     },
 
     actions: {
