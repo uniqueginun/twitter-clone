@@ -69,6 +69,7 @@
                 await axios.post('/api/tweets', this.form);
 
                 this.emptyFormData();
+                
             },
 
             emptyFormData() {
