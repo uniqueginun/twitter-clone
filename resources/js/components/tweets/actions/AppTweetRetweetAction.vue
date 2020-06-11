@@ -19,10 +19,12 @@
 
     import { mapGetters, mapActions } from 'vuex';
     import AppTweetRetweetModal from "../../modals/AppTweetRetweetModal";
-
+    import modal from '../../../mixins/modal'
 
     export default {
         name: "AppTweetRetweetAction",
+
+        mixins: [modal],
 
         props: {
             tweet: {
@@ -56,11 +58,7 @@
             },
 
             fireRetweetModal() {
-                this.$modal.show(AppTweetRetweetModal, {
-                    tweet: this.tweet
-                }, {
-                    draggable: true
-                })
+                this.fireModal(AppTweetRetweetModal, { tweet: this.tweet })
             }
         }
     }
