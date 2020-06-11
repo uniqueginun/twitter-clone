@@ -2195,14 +2195,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     postTweet: function postTweet() {
+      var _this = this;
+
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log('reply');
+                data = {
+                  id: _this.tweet.id,
+                  form: _this.form
+                };
+                _context.next = 3;
+                return _this.$store.dispatch('timeline/replyTweet', data);
 
-              case 1:
+              case 3:
+                _this.$emit('success');
+
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -2592,11 +2603,6 @@ __webpack_require__.r(__webpack_exports__);
     tweet: {
       required: true,
       type: Object
-    }
-  },
-  methods: {
-    closeModal: function closeModal() {
-      this.$emit('close');
     }
   }
 });
@@ -50685,7 +50691,14 @@ var render = function() {
           })
         : _vm._e(),
       _vm._v(" "),
-      _c("app-tweet-reply-compose", { attrs: { tweet: _vm.tweet } })
+      _c("app-tweet-reply-compose", {
+        attrs: { tweet: _vm.tweet },
+        on: {
+          success: function($event) {
+            return _vm.$emit("close")
+          }
+        }
+      })
     ],
     1
   )
@@ -50717,7 +50730,11 @@ var render = function() {
     [
       _c("app-tweet-retweet-compose", {
         attrs: { tweet: _vm.tweet },
-        on: { success: _vm.closeModal }
+        on: {
+          success: function($event) {
+            return _vm.$emit("close")
+          }
+        }
       }),
       _vm._v(" "),
       _vm.tweet
@@ -67340,6 +67357,27 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             }
           }
         }, _callee2);
+      }))();
+    },
+    replyTweet: function replyTweet(_ref6, _ref7) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var _, id, form;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _ = _ref6._;
+                id = _ref7.id, form = _ref7.form;
+                _context3.next = 4;
+                return axios.post("/api/tweets/".concat(id, "/replies"), form);
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
       }))();
     }
   }

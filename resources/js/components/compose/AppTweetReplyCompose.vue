@@ -67,7 +67,14 @@
 
         methods: {
             async postTweet() {
-                console.log('reply');
+                let data = {
+                    id: this.tweet.id,
+                    form: this.form
+                }
+
+                await this.$store.dispatch('timeline/replyTweet', data)
+
+                this.$emit('success')
             }
         }
     }

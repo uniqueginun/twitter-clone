@@ -50,6 +50,10 @@ export default {
             await axios.post(`/api/tweets/${id}/quotes`, {
                 body
             })
+        },
+
+        async replyTweet({_,}, {id, form}) {
+            await axios.post(`/api/tweets/${id}/replies`, form)
         }
     }
 }

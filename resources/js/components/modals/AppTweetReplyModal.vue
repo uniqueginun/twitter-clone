@@ -6,7 +6,7 @@
             class="mb-4"
             v-if="tweet"
         />
-        <app-tweet-reply-compose :tweet="tweet" />
+        <app-tweet-reply-compose :tweet="tweet" @success="$emit('close')" />
     </div>
 </template>
 
