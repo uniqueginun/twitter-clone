@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="tweet()" class="flex">
+    <form @submit.prevent="submitTweet()" class="flex">
         <img :src="$user.avatar" class="mr-3 w-12 h-12 rounded-full" />
         <div class="flex-grow">
 

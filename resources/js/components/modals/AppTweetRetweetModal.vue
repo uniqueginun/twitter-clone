@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-tweet-retweet-compose />
+        <app-tweet-retweet-compose :tweet="tweet" @success="closeModal" />
         <component
            :is="`app-tweet-variant-${tweet.type}`"
            :tweet="tweet"
@@ -17,6 +17,11 @@
             tweet: {
                 required: true,
                 type: Object
+            }
+        },
+        methods: {
+            closeModal() {
+                this.$emit('close')
             }
         }
     }

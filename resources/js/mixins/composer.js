@@ -18,7 +18,7 @@ export default {
     },
 
     methods: {
-        async tweet() {
+        async submitTweet() {
 
             if (this.media.images.length || this.media.video) {
                 let uploadedMediaIds = await this.uploadMedia();

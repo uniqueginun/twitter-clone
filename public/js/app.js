@@ -2165,20 +2165,38 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppTweetRetweetCompose",
   mixins: [_mixins_composer__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  props: {
+    tweet: {
+      required: true,
+      type: Object
+    }
+  },
   methods: {
     postTweet: function postTweet() {
+      var _this = this;
+
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log('posting tweet with comment'); //await axios.post('/api/tweets', this.form)
+                data = {
+                  id: _this.tweet.id,
+                  body: _this.form.body
+                };
+                _context.next = 3;
+                return _this.$store.dispatch('timeline/quoteTweet', data);
 
-              case 1:
+              case 3:
+                _this.$emit('success');
+
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -2443,6 +2461,11 @@ __webpack_require__.r(__webpack_exports__);
     tweet: {
       required: true,
       type: Object
+    }
+  },
+  methods: {
+    closeModal: function closeModal() {
+      this.$emit('close');
     }
   }
 });
@@ -49724,7 +49747,7 @@ var render = function() {
       on: {
         submit: function($event) {
           $event.preventDefault()
-          return _vm.tweet()
+          return _vm.submitTweet()
         }
       }
     },
@@ -49948,7 +49971,7 @@ var render = function() {
       on: {
         submit: function($event) {
           $event.preventDefault()
-          return _vm.tweet()
+          return _vm.submitTweet()
         }
       }
     },
@@ -49999,7 +50022,7 @@ var render = function() {
                       "bg-blue-600 rounded-full text-gray-300 text-center px-4 py-3 font-bold leading-none",
                     attrs: { type: "submit" }
                   },
-                  [_vm._v("\n                    Retweet\n                ")]
+                  [_vm._v("\n                  Retweet\n                ")]
                 )
               ],
               1
@@ -50375,7 +50398,10 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("app-tweet-retweet-compose"),
+      _c("app-tweet-retweet-compose", {
+        attrs: { tweet: _vm.tweet },
+        on: { success: _vm.closeModal }
+      }),
       _vm._v(" "),
       _vm.tweet
         ? _c("app-tweet-variant-" + _vm.tweet.type, {
@@ -66320,7 +66346,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   methods: {
-    tweet: function tweet() {
+    submitTweet: function submitTweet() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -66799,6 +66825,29 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             }
           }
         }, _callee);
+      }))();
+    },
+    quoteTweet: function quoteTweet(_ref4, _ref5) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var _, id, body;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _ = _ref4._;
+                id = _ref5.id, body = _ref5.body;
+                _context2.next = 4;
+                return axios.post("/api/tweets/".concat(id, "/quotes"), {
+                  body: body
+                });
+
+              case 4:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
       }))();
     }
   }
