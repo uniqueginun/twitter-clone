@@ -2,7 +2,7 @@
     <textarea
             ref="composer"
             class="bg-gray-900 w-full outline-none text-gray-300 text-lg resize-none mb-2"
-            placeholder="what's happening?"
+            :placeholder="placeholder"
             autofocus
             @input="$emit('input', $event.target.value); resize($event);"
             :value="value"
@@ -17,6 +17,11 @@
             value: {
                 type: String,
                 required: false
+            },
+
+            placeholder: {
+                type: String,
+                default: "what's happening?"
             }
         },
 

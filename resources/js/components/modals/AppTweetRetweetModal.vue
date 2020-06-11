@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-tweet-compose />
+        <app-tweet-retweet-compose />
         <component
            :is="`app-tweet-variant-${tweet.type}`"
            :tweet="tweet"
@@ -11,10 +11,8 @@
 </template>
 
 <script>
-
     export default {
         name: "AppTweetRetweetModal",
-
         props: {
             tweet: {
                 required: true,
