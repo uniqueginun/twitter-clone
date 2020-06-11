@@ -2928,6 +2928,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppTweetVariantTweet",
   props: {
@@ -2940,6 +2948,11 @@ __webpack_require__.r(__webpack_exports__);
     images: function images() {
       return this.tweet.media.data.filter(function (mediaElement) {
         return mediaElement.type === 'image';
+      });
+    },
+    video: function video() {
+      return this.tweet.media.data.find(function (mediaElement) {
+        return mediaElement.type === 'video';
       });
     }
   }
@@ -50746,6 +50759,15 @@ var render = function() {
               }),
               0
             )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.video
+          ? _c("div", { staticClass: "mt-4 mb-4" }, [
+              _c("video", {
+                staticClass: "rounded-lg",
+                attrs: { src: _vm.video.url, controls: "" }
+              })
+            ])
           : _vm._e(),
         _vm._v(" "),
         _c("app-tweet-actions-group", { attrs: { tweet: _vm.tweet } })

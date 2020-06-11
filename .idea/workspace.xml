@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50f1a4cf-036b-43bb-a722-911358d21f68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Media/Media.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Tweet/TweetsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Tweet/TweetsResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Media/MimeTypes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Media/MimeTypes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/TweetMedia.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/TweetMedia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/media-library.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/media-library.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/medialibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/medialibrary.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -24,11 +21,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+            <state relative-caret-position="478">
+              <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/medialibrary.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/media-library.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -49,7 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/components/compose/AppTweetComposeTextarea.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/tweets/actions/AppTweetReplyAction.vue" />
         <option value="$PROJECT_DIR$/app/Like.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_06_08_074157_create_likes_table.php" />
@@ -79,7 +93,6 @@
         <option value="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetVideoPreview.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetImagePreview.vue" />
-        <option value="$PROJECT_DIR$/config/media-library.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/config/filesystems.php" />
         <option value="$PROJECT_DIR$/.env" />
@@ -93,13 +106,15 @@
         <option value="$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue" />
         <option value="$PROJECT_DIR$/app/Http/Resources/Media/MediaCollection.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/Tweet/TweetsResource.php" />
-        <option value="$PROJECT_DIR$/config/medialibrary.php" />
         <option value="$PROJECT_DIR$/app/Tweet.php" />
         <option value="$PROJECT_DIR$/app/TweetMedia.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/Media/MediaResource.php" />
         <option value="$PROJECT_DIR$/app/Media/MimeTypes.php" />
         <option value="$PROJECT_DIR$/app/Media/Media.php" />
         <option value="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/config/media-library.php" />
+        <option value="$PROJECT_DIR$/config/medialibrary.php" />
       </list>
     </option>
   </component>
@@ -262,6 +277,11 @@
             <path>
               <item name="twitter" type="b2602c69:ProjectViewProjectNode" />
               <item name="twitter" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="twitter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="twitter" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -348,7 +368,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69162000" />
+    <option name="totallyTimeSpent" value="70238000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -380,13 +400,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/js/components/dropdown/AppDropdownItem.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/actions/AppTweetActionsGroup.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -610,13 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/media-library.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -714,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/medialibrary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Tweet.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -766,10 +765,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        <state relative-caret-position="478">
+          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/media-library.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/medialibrary.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
