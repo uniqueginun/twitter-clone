@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Tweets\Entities\EntityExtractor;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,7 +15,7 @@ class Tweet extends Model
         parent::boot();
 
         static::created(function (Tweet $tweet) {
-            dd($tweet->body);
+            $tweet->entities()->createMany((new EntityExtractor($tweet->body))->getAllEntities());
         });
     }
 
