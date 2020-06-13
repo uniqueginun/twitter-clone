@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50f1a4cf-036b-43bb-a722-911358d21f68" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Tweet/TweetsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Tweet/TweetsResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tweets/AppTweetBody.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetHashtagEntity.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,61 +22,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Tweet.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="17" column="94" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
-              <folding>
-                <element signature="e#23#63#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="140">
+              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Tweets/Entities/EntityType.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Tweets/Entities/EntityExtractor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/Entity/EntityCollection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+            <state relative-caret-position="140">
+              <caret line="7" column="45" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/Tweet/TweetsResource.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweetBody.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
-              <folding>
-                <element signature="e#44#91#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="400">
+              <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/Entity/EntityResource.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetHashtagEntity.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+            <state relative-caret-position="20">
+              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -81,8 +62,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -92,10 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetMediaProgress.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/compose/media/AppTweetImagePreview.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/compose/AppTweetComposeTextarea.vue" />
         <option value="$PROJECT_DIR$/resources/js/mixins/composer.js" />
         <option value="$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue" />
@@ -143,6 +120,10 @@
         <option value="$PROJECT_DIR$/app/Http/Resources/Entity/EntityResource.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/Entity/EntityCollection.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/Tweet/TweetsResource.php" />
+        <option value="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetHashtagEntity.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/tweets/AppTweetBody.vue" />
       </list>
     </option>
   </component>
@@ -305,28 +286,28 @@
             <path>
               <item name="twitter" type="b2602c69:ProjectViewProjectNode" />
               <item name="twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="twitter" type="b2602c69:ProjectViewProjectNode" />
               <item name="twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="twitter" type="b2602c69:ProjectViewProjectNode" />
               <item name="twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="twitter" type="b2602c69:ProjectViewProjectNode" />
               <item name="twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Tweet" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="tweets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -382,7 +363,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100911000" />
+    <option name="totallyTimeSpent" value="102093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -414,23 +395,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Tweet/TweetQuoteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#50#93#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/compose/AppTweetRetweetCompose.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="60" column="37" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="60" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/mixins/composer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -638,26 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantRetweet.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweet.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweetUsername.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -789,6 +733,40 @@
           <folding>
             <element signature="e#44#91#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweet.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantRetweet.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetHashtagEntity.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweetBody.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
         </state>
       </provider>
     </entry>
