@@ -8,6 +8,7 @@ use App\Http\Requests\Tweets\TweetStoreRequest;
 use App\Http\Resources\Tweet\TweetsCollection;
 use App\Tweet;
 use App\TweetMedia;
+use App\Tweets\TweetsRelations;
 use App\Tweets\TweetTypes;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ class TweetController extends Controller
 
     public function index(Request $request)
     {
-        $tweets = Tweet::find(explode(",", $request->ids));
+        $tweets = Tweet::with($this->getEagerLoadedRelations())->find(explode(",", $request->ids));
 
         return new TweetsCollection($tweets);
     }
@@ -40,5 +41,10 @@ class TweetController extends Controller
         });
 
         broadcast(new TweetWasCreated($tweet));
+    }
+
+    protected function getEagerLoadedRelations()
+    {
+        return TweetsRelations::$eagerloadedRelations;
     }
 }
