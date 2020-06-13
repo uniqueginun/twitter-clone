@@ -65806,6 +65806,7 @@ Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
 
   store.commit('timeline/UPDATE_LIKES', e);
   store.commit('notifications/UPDATE_LIKES', e);
+  store.commit('conversations/UPDATE_LIKES', e);
 }).listen('.TweetRetweetsUpdated', function (e) {
   if (e.user_id === window.User.id) {
     store.dispatch('retweets/syncRetweet', e.id);
@@ -65813,6 +65814,7 @@ Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
 
   store.commit('timeline/UPDATE_RETWEETS', e);
   store.commit('notifications/UPDATE_RETWEETS', e);
+  store.commit('conversations/UPDATE_RETWEETS', e);
 }).listen('.TweetWasDeleted', function (e) {
   store.commit('timeline/POP_TWEET', e.id, {
     root: true
@@ -65820,6 +65822,7 @@ Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
 }).listen('.TweetRepliesUpdated', function (e) {
   store.commit('timeline/UPDATE_REPLIES', e);
   store.commit('notifications/UPDATE_REPLIES', e);
+  store.commit('conversations/UPDATE_REPLIES', e);
 });
 
 /***/ }),
