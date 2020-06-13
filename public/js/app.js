@@ -3519,6 +3519,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AppTweetVariantTweet",
   props: {
@@ -52036,6 +52040,15 @@ var render = function() {
       { staticClass: "flex-grow" },
       [
         _c("app-tweet-username", { attrs: { user: _vm.tweet.user } }),
+        _vm._v(" "),
+        _vm.tweet.replying_to
+          ? _c("div", { staticClass: "text-gray-600 mb-2" }, [
+              _vm._v("\n            Replying to "),
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v("@" + _vm._s(_vm.tweet.replying_to))
+              ])
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _c("app-tweet-body", { attrs: { tweet: _vm.tweet } }),
         _vm._v(" "),
