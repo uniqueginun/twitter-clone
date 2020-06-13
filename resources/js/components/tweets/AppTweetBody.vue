@@ -1,30 +1,42 @@
 <template>
-    <p class="text-gray-300 whitespace-pre-wrap break-all">
+    <p class="text-gray-300 whitespace-pre-wrap">
         <component :is="body" />
     </p>
 </template>
 
 <script>
     export default {
-        name: "AppTweetBody",
-
         props: {
             tweet: {
-                type: Object,
-                required: true
+                required: true,
+                type: Object
             }
         },
 
         computed: {
-            body() {
+            body () {
                 return {
-                    'template': `<div>${this.tweet.body} <app-tweet-hashtag-entity /></div>`
+                    'template': `<div>${this.replaceEntities(this.tweet.body)}</div>`
                 }
+            },
+
+            entities () {
+                return this.tweet.entities.data.sort((a, b) => b.start - a.start)
+            }
+        },
+
+        methods: {
+            replaceEntities (body) {
+                this.entities.forEach((entity) => {
+                    body = body.substring(0, entity.start) + this.entityComponent(entity) + body.substring(entity.end)
+                })
+
+                return body
+            },
+
+            entityComponent (entity) {
+                return `<app-tweet-${entity.type}-entity body="${entity.body}" />`
             }
         }
     }
 </script>
-
-<style scoped>
-
-</style>

@@ -1,5 +1,5 @@
 <template>
-    <a :href="`/hashtags/${body}`">{{ body }}</a>
+    <a :href="`/users/${body}`">{{ body }}</a>
 </template>
 
 <script>

@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50f1a4cf-036b-43bb-a722-911358d21f68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/tweets/AppTweetBody.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetHashtagEntity.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetMentionEntity.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/tweets/AppTweetBody.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tweets/AppTweetBody.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetHashtagEntity.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetHashtagEntity.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +41,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweetBody.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
+            <state relative-caret-position="840">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetMentionEntity.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -51,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetHashtagEntity.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+            <state relative-caret-position="280">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -73,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/js/components/compose/AppTweetComposeTextarea.vue" />
         <option value="$PROJECT_DIR$/resources/js/mixins/composer.js" />
         <option value="$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/compose/AppTweetRetweetCompose.vue" />
@@ -123,6 +130,7 @@
         <option value="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantTweet.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/tweets/variants/AppTweetVariantQuote.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetHashtagEntity.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetMentionEntity.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/tweets/AppTweetBody.vue" />
       </list>
     </option>
@@ -309,6 +317,15 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="tweets" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="twitter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="twitter" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="tweets" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -363,7 +380,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102093000" />
+    <option name="totallyTimeSpent" value="102773000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -395,13 +412,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/js/mixins/composer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/compose/AppTweetReplyCompose.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
@@ -758,15 +768,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetHashtagEntity.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        <state relative-caret-position="280">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/entities/AppTweetMentionEntity.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/AppTweetBody.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
+        <state relative-caret-position="840">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
