@@ -2,14 +2,16 @@
 
 namespace App;
 
+use App\Tweets\Entities\EntityDatabaseCollection;
 use Illuminate\Database\Eloquent\Model;
 
 class Entity extends Model
 {
     protected $guarded = [];
 
-    public function tweet()
+    public function newCollection(array $models = [])
     {
-        return $this->belongsTo(Tweet::class);
+        return new EntityDatabaseCollection($models);
     }
+
 }
