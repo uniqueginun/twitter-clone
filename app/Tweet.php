@@ -9,6 +9,15 @@ class Tweet extends Model
 {
     protected $guarded = [];
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::created(function (Tweet $tweet) {
+            dd($tweet->body);
+        });
+    }
+
     public function scopeParent(Builder $builder)
     {
         return $builder->whereNull('parent_id');
