@@ -53,7 +53,7 @@ Echo.channel('tweets')
         }
 
         store.commit('timeline/UPDATE_LIKES', e);
-
+        store.commit('notifications/UPDATE_LIKES', e);
     })
     .listen('.TweetRetweetsUpdated', (e) => {
 
@@ -62,11 +62,12 @@ Echo.channel('tweets')
         }
 
         store.commit('timeline/UPDATE_RETWEETS', e);
-
+        store.commit('notifications/UPDATE_RETWEETS', e);
     })
     .listen('.TweetWasDeleted', (e) => {
         store.commit('timeline/POP_TWEET', e.id, { root: true });
     })
     .listen('.TweetRepliesUpdated', (e) => {
         store.commit('timeline/UPDATE_REPLIES', e);
+        store.commit('notifications/UPDATE_REPLIES', e);
     })
