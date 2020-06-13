@@ -10,6 +10,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('tweets/{tweet}', 'Tweet\TweetController@show');
     Route::post('tweets', 'Tweet\TweetController@store');
 
+    Route::get('/tweets/{tweet}/replies', 'Tweet\TweetReplyController@show');
     Route::post('/tweets/{tweet}/replies', 'Tweet\TweetReplyController@store');
 
     Route::post('tweets/{tweet}/likes', 'Tweet\LikeTweetController@store');
