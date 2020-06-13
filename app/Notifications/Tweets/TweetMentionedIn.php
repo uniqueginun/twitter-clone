@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Notifications\Tweets;
 
 use App\Http\Resources\Tweet\TweetsResource;
@@ -10,7 +11,8 @@ use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 
-class TweetLiked extends Notification
+
+class TweetMentionedIn extends Notification
 {
     use Queueable;
     /**
@@ -58,4 +60,5 @@ class TweetLiked extends Notification
             'tweet' => new TweetsResource($this->tweet)
         ];
     }
+
 }

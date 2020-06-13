@@ -6,11 +6,13 @@ use App\Events\Tweets\TweetWasCreated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Tweets\TweetStoreRequest;
 use App\Http\Resources\Tweet\TweetsCollection;
+use App\Notifications\Tweets\TweetMentionedIn;
 use App\Tweet;
 use App\TweetMedia;
 use App\Tweets\TweetsRelations;
 use App\Tweets\TweetTypes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class TweetController extends Controller
 {
@@ -40,9 +42,11 @@ class TweetController extends Controller
            $tweet->media()->save(TweetMedia::find($id));
         });
 
-        $usersMentioned = $tweet->mentions->users();
+        $usersMentioned = $tweet->mentions->users()->filter(function ($user) use ($request) {
+            return ($user->id !== $request->user()->id);
+        });
 
-        dd($usersMentioned);
+        Notification::send($usersMentioned, new TweetMentionedIn($request->user(), $tweet));
 
         broadcast(new TweetWasCreated($tweet));
     }
