@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50f1a4cf-036b-43bb-a722-911358d21f68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Tweets/TweetsRelations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Timeline/TimelineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Timeline/TimelineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Tweet/TweetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Tweet/TweetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tweet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tweet.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,32 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Tweet/TweetController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-              <folding>
-                <element signature="e#50#88#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Timeline/TimelineController.php">
+        <entry file="file://$PROJECT_DIR$/app/Tweet.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Tweets/TweetsRelations.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="598">
+              <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -65,7 +41,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Resources/Media/MediaResource.php" />
         <option value="$PROJECT_DIR$/app/Media/MimeTypes.php" />
         <option value="$PROJECT_DIR$/app/Media/Media.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -82,7 +57,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Tweet/TweetQuoteController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_06_11_115802_add_parent_id_to_tweets_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/Tweet/TweetsResource.php" />
-        <option value="$PROJECT_DIR$/app/Tweet.php" />
         <option value="$PROJECT_DIR$/resources/js/components/tweets/actions/AppTweetActionsGroup.vue" />
         <option value="$PROJECT_DIR$/resources/js/mixins/modal.js" />
         <option value="$PROJECT_DIR$/resources/js/components/tweets/actions/AppTweetReplyAction.vue" />
@@ -116,6 +90,8 @@
         <option value="$PROJECT_DIR$/app/Tweets/TweetsRelations.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Tweet/TweetController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Timeline/TimelineController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_06_13_062148_create_entities_table.php" />
+        <option value="$PROJECT_DIR$/app/Tweet.php" />
       </list>
     </option>
   </component>
@@ -280,12 +256,6 @@
               <item name="twitter" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="twitter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twitter" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Tweets" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -340,7 +310,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96166000" />
+    <option name="totallyTimeSpent" value="96833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -372,20 +342,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/js/components/compose/AppTweetCompose.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="34" lean-forward="true" selection-end-line="62" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/actions/AppTweetRetweetActionButton.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="80" selection-start-line="1" selection-start-column="75" selection-end-line="1" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/tweets/actions/AppTweetActionsGroup.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -728,7 +684,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Tweet/TweetController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
           <folding>
             <element signature="e#50#88#0#PHP" expanded="true" />
           </folding>
@@ -746,6 +702,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_06_13_062148_create_entities_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="25" column="93" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tweet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
         </state>
       </provider>
     </entry>
