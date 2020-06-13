@@ -51,6 +51,12 @@ class TweetController extends Controller
         broadcast(new TweetWasCreated($tweet));
     }
 
+    public function show(Tweet $tweet)
+    {
+        $tweetFamily = collect([$tweet])->merge($tweet->parents());
+        return new TweetsCollection($tweetFamily);
+    }
+
     protected function getEagerLoadedRelations()
     {
         return TweetsRelations::$eagerloadedRelations;

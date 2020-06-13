@@ -7,6 +7,7 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('timeline', 'Timeline\TimelineController@index');
 
     Route::get('tweets', 'Tweet\TweetController@index');
+    Route::get('tweets/{tweet}', 'Tweet\TweetController@show');
     Route::post('tweets', 'Tweet\TweetController@store');
 
     Route::post('/tweets/{tweet}/replies', 'Tweet\TweetReplyController@store');

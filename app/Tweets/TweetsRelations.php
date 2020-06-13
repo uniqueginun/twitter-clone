@@ -8,6 +8,7 @@ class TweetsRelations
         'user',
         'originalTweet',
         'likes',
+        'entities',
         'media.baseMedia',
         'retweets',
         'replies',
