@@ -23,3 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/notifications', 'Notifications\NotificationController@index');
 
+Route::get('/tweets/{tweet}', 'TweetController@show');
+
